@@ -646,6 +646,128 @@
 
 // console.log(obtenerNombreCompleto(persona))
 
+
+
 //Ejercicio 2: Estado estudiantes
 //Estamos diseñando un nuevo sistema para una facultad, y tenemos la información de las materias para cada estudiante en objetos donde cada propiedad es una materia que contiene un array con las notas de los resultados de los parciales. Por ejemplo:
+// Nos pidieron generar un informe que muestre las materias aprobadas (promedio de notas >= 4) y desaprobadas (promedio de notas < 4);
+// para implementar este reporte, tenemos que definir una función que tome un objeto con las materias y sus notas, y nos retorne un objeto con dos propiedades: aprobadas y desaprobadas;
+// cada propiedad es un array que contiene el nombre de las materias que aprobaron o desaprobaron respectivamente.
 
+// let materiasAda = {
+//   matematica: [10, 6, 10, 8],
+//   algoritmos: [10, 10, 9],
+//   algebra: [7, 9]
+// };
+
+// let materiasGrace = {
+//   matematica: [2, 9, 10, 7],
+//   algoritmos: [7, 1, 9],
+//   algebra: [2, 3]
+// };
+
+// const agruparMateriasPorEstado = (alumna) => {
+  
+//   let materiasFinal = {
+//     aprobadas: [],
+//     desaprobadas: []
+//   };
+//   const { aprobadas, desaprobadas } = materiasFinal
+
+//   const materias = Object.keys((alumna))
+    
+//     for (prop of materias) {
+        
+//       const materia = alumna[prop]
+//       let final = "";
+
+//       for (let i = 0; i < materia.length; i++) {
+//         final = parseInt(final + materia[i])     
+//       }
+//           let promedio = final / materia.length
+        
+//           if (promedio >= 4) {
+//             aprobadas.push(prop)
+//           } else {
+//             desaprobadas.push(prop)
+//         }
+        
+//     }
+//         return materiasFinal
+
+// }
+
+// console.log(agruparMateriasPorEstado(materiasAda))
+// //{ aprobadas: ['matematica', 'algoritmos', 'algebra'], desaprobadas: [] }
+
+//  console.log(agruparMateriasPorEstado(materiasGrace))
+// //{ aprobadas: ['matematica', 'algoritmos'], desaprobadas: ['algebra'] }
+
+
+//Ejercicio 3: Validar contraseña
+//Tenemos los datos de distintas personas que quieren crear un perfil dentro de Gmail guardados de la siguiente forma:
+//Nos pidieron implementar una función, llamada validarPassword, que reciba un perfil y valide la contraseña.la función nos tiene que retornar un objeto con dos propiedades: verificada (un booleano) y mensaje (un string que contiene el mensaje de la validación que falló, o vacío si salió todo bien); de la contraseña tenemos que validar: 
+//que la longitud sea mayor o igual a 6(si es menor, retornar el mensaje "Contraseña con menos de 6 caracteres"); 
+//que la contraseña no sea una de: "123456", "password", "111111", "qwerty"(si coincide con alguna de esas contraseñas, retornar el mensaje "Contraseña muy insegura").
+//Definí la función validarPassword y las funciones auxiliares necesarias para lograr el comportamiento que acabamos de describir.
+
+
+// const validarPassword = (perfil) => {
+
+//   let contraseniaChequeda = {
+//     verificada: Boolean,
+//     mensaje: String    
+// }
+//   //const { verificada, mensaje } = contraseniaChequeda
+  
+//   const contrasenia = perfil.password
+//   const inseguras = ["123456", "password", "111111", "qwerty",]
+//       if (contrasenia.length < 6) {
+      
+//         contraseniaChequeda.verificada = false,
+//         contraseniaChequeda.mensaje = 'Contraseña con menos de 6 caracteres'
+
+//       } else {
+        
+//           if (inseguras.includes(contrasenia)) {
+            
+//             contraseniaChequeda.verificada = false,
+//             contraseniaChequeda.mensaje = 'Contraseña muy insegura'
+
+//           } else {
+
+//             contraseniaChequeda.verificada = true,
+//             contraseniaChequeda.mensaje = ''
+            
+//           }
+//   }
+//   return contraseniaChequeda  
+// }
+
+// let perfil1 = {
+//   nombre: 'Grace',
+//   apellido: 'Hopper',
+//   email: 'grace.hopper@gmail.com',
+//   password: '123456'
+// };
+
+// let perfil2 = {
+//   nombre: 'Ada',
+//   apellido: 'Lovelace',
+//   email: 'ada.lovelace@gmail.com',
+//   password: '**178!Ada--'
+// };
+
+// let perfil3 = {
+//   nombre: 'Hedy',
+//   apellido: 'Lamarr',
+//   email: 'hlamarr@gmail.com',
+//   password: '1234'
+// };
+
+// console.log(validarPassword(perfil1))
+// //{ verificada: false, mensaje: 'Contraseña muy insegura' } 
+// console.log(validarPassword(perfil2))
+// //{ verificada: true, mensaje: '' }
+// console.log(validarPassword(perfil3))
+// //{ verificada: false, mensaje: 'Contraseña con menos de 6 caracteres' }
