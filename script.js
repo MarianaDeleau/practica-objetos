@@ -757,6 +757,124 @@
 // console.log(carrito.obtenerTotal())
 // //150
 
+//Ejercicio 7: Carrito II
+//Debido a un cambio de requerimiento, el precio final total se calcula distinto. Si un producto no tiene envioIncluido entonces al precio del producto hay que sumarle 120. Si tiene envioIncluido entonces se toma el precio que está en el objeto y no se le suma nada. Una vez calculado el total, hay que agregar un 21% de IVA. 
+//Modificá el método obtenerTotal para que retorne el precio total más el IVA.
+
+//  let mouse = {
+//   id: 0,
+//   titulo: "Mouse Genius",
+//   precio: 150,
+//   envioIncluido: true
+// };
+
+// let carrito = {
+//   cuenta: {
+//     id: 123,
+//     nombre: "Ada Lovelace",
+//   },
+//   productos: [],
+//   agregarAlCarrito: function (producto) {
+//     this.productos.push(producto)
+//     return this
+//   },
+//   obtenerTotal: function () {
+  
+//       let final = "";
+//       for (let i = 0; i < this.productos.length; i++) {
+          
+//           if (this.productos[i].envioIncluido) {
+//         final = (parseInt(final + this.productos[i].precio))
+//           } else {
+//         final = (parseInt(final + this.productos[i].precio)+120)
+//           }
+          
+//     }
+//     return final*1.21
+//   },
+// }
+
+// console.log(carrito.agregarAlCarrito(mouse))
+
+// console.log(carrito.obtenerTotal())
+// //181.5
+
+//Ejercicio 8: Carrito III
+//Necesitamos agregar una funcionalidad más a nuestro carrito, para ello vamos a agregarle un método que se llame detalle que debe mostrar el listado de productos a comprar con su precio y al final de todo el precio final total, con IVA incluido.
+
+// let carrito = {
+//   cuenta: {
+//     id: 123,
+//     nombre: "Ada Lovelace",
+//   },
+//     productos: [],
+
+//     agregarAlCarrito: function (producto) {
+//         this.productos.push(producto)
+//         return this
+//     },
+
+//     detalle: function () {
+//         let listado = "";
+//         for (let i = 0; i < this.productos.length; i++) {
+//             listado += `${this.productos[i].titulo} - $${this.productos[i].precio}\n`
+//         }
+//         return `Listado de productos:\n${listado}Total con IVA: $${this.obtenerTotal()}`
+//     },
+
+//     obtenerTotal: function () {
+//         let final = "";
+//         for (let i = 0; i < this.productos.length; i++) {
+//             if (this.productos[i].envioIncluido) {
+//         final = (parseInt(final + this.productos[i].precio))
+//             } else {
+//         final = (parseInt(final + this.productos[i].precio)+120)
+//             }
+//         }
+//         return final*1.21
+//     },
+
+// }
+
+// let mouse = {
+//     nombre: 'Mouse',
+//     id: 0,
+//     titulo: "Mouse Genius",
+//     precio: 150,
+//     envioIncluido: false
+//   };
+
+// let monitor = {
+//     nombre: 'Monitor',
+//     titulo: "Monitor Genius",
+//     precio: 320,
+// };
+
+// let pendrive = {
+//     nombre: 'Pendrive',
+//     titulo: "Pendrive Genius",
+//     precio: 250,
+// };
+
+// let discoRigido = {
+//     nombre: 'Disco Rígido',
+//     titulo: "Disco Genius",
+//     precio: 530,
+// };
+
+// let teclado = {
+//     nombre: 'Teclado',
+//     titulo: "Teclado Genius",
+//     precio: 125,
+// };
+
+// console.log(carrito.agregarAlCarrito(mouse))
+// console.log(carrito.agregarAlCarrito(monitor))
+// console.log(carrito.agregarAlCarrito(pendrive))
+// console.log(carrito.agregarAlCarrito(discoRigido))
+// console.log(carrito.agregarAlCarrito(teclado))
+// console.log(carrito.detalle())
+// //console.log(carrito.obtenerTotal())
 
 
 
@@ -905,3 +1023,35 @@
 // //{ verificada: true, mensaje: '' }
 // console.log(validarPassword(perfil3))
 // //{ verificada: false, mensaje: 'Contraseña con menos de 6 caracteres' }
+
+
+//Ejercicio 4: Render álbum
+// Queremos crear un html a partir de un objeto de JavaScript, más especificamente vamos a crear una página que nos permita visualizar discos de Spotify.Los discos tienen las propiedades: id(string), nombre(string), anio(número), genero(array de strings), banda(string), portada(string) e info(string).Por ejemplo:
+// Para eso definiremos una función render que reciba un disco como argumento y genere un HTML de la siguiente forma:
+
+let albumDeEjemplo = {
+  id: 'nirv1234',
+  nombre: 'With The Lights Out',
+  anio: 2004,
+  genero: 'Grunge',
+  banda: 'Nirvana',
+  portada: 'https://muzikalia.com/wp-content/uploads/2005/03/nirvana__with_the_lights_out.jpg',
+  info: 'https://en.wikipedia.org/wiki/With_the_Lights_Out'
+};
+
+
+
+
+
+
+ render(albumDeEjemplo)
+// `
+// <div class="card m-5" id="nirv1234">
+//   <img class="card-img-top" src="https://muzikalia.com/wp-content/uploads/2005/03/nirvana__with_the_lights_out.jpg" alt="Nirvana - With The Lights Out" />
+//   <div class="card-body">
+//     <h5 class="card-title">Nirvana</h5>
+//     <p class="card-text">With The Lights Out (2004) | Grunge</p>
+//     <a href="https://en.wikipedia.org/wiki/With_the_Lights_Out" class="btn btn-primary">https://en.wikipedia.org/wiki/With_the_Lights_Out</a>
+//   </div>
+// </div>
+// `
