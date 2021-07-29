@@ -626,6 +626,140 @@
 // //false
 
 
+//FUNCIONES DENTRO DE OBJETOS
+
+//Ejercicio 1: Hola mundo
+// Necesitamos una variable holaMundo y asignarle un objeto con los siguientes métodos:
+// mostrarMensaje: retorna el mensaje "¡Hola mundo!";
+// obtenerMensaje: retorna un string con el mensaje "¡Alo mundo!"
+
+// let holaMundo = {
+  
+//   mostrarMensaje: function(){
+//    return "¡Hola mundo!"
+//  },
+ 
+//   obtenerMensaje: function(){
+//    return "¡Alo mundo!"
+//  },
+ 
+//  }
+
+// console.log(holaMundo.mostrarMensaje())
+// //"¡Hola mundo!"
+
+// console.log(holaMundo.obtenerMensaje())
+// //"¡Alo mundo!"
+
+
+//Ejercicio 2: Películas
+//Necesitamos agregarle al objeto pelicula  un método mostrarInfo que retorne el mensaje: "Película: [NOMBRE PELICULA] - Año: [AÑO PELICULA]":
+//Definí el método mostrarInfo dentro del objeto pelicula.
+
+// let pelicula = {
+//   titulo: "The Dark Knight",
+//   anio: 2008,
+//   director: "Christopher Nolan", 
+//   mostrarInfo: function(){
+//     return `Película: ${pelicula.titulo} - Año: ${pelicula.anio}`
+//   },
+// };
+
+//  console.log(pelicula.mostrarInfo())
+// //"Película: The Dark Knight - Año: 2008"
+
+
+// Ejercicio 3: Playlist
+// Queremos agregarle a playlist un método que se llame agregarCancion que va a recibir un string como parámetro(el nombre de una canción) y va a agregarlo en la propiedad canciones del objeto.
+// Definí el método agregarCancion.
+
+// let playlist = {
+//   nombre: "Rupaul Lipsyncs",
+//   creadaPor: "Ada",
+//   seguidores: 8743,
+//   canciones: [],
+//   agregarCancion: function (cancion){
+//     playlist.canciones.push(cancion)
+//     return this
+//   }
+// };
+
+// console.log(playlist.agregarCancion('Esta es la canción'))
+
+//Ejercicio 4: Perfil
+// Necesitamos agregarle al objeto perfil un método obtenerNombreCompleto, que debe retornar un string con primerNombre y apellido concatenados, separados por un espacio:
+// Definí el método obtenerNombreCompleto dentro de la variable perfil.
+
+
+// let perfil = {
+//   nombre: "Hedy",
+//   apellido: "Lamarr",
+//   edad: 30,
+//   obtenerNombreCompleto: function () {
+//     return `${perfil.nombre} ${perfil.apellido}`
+//   }
+// };
+
+// console.log(perfil.obtenerNombreCompleto())
+// //"Hedy Lamarr"
+
+//Ejercicio 5: Perfil II
+//Tenemos la misma variable perfil del ejercicio anterior, con información sobre una persona, pero con una diferencia en la estructura. 
+//Agregá nuevamente el método obtenerNombreCompleto al perfil para que retorne el nombre tal como antes.
+
+// let perfil = {
+//   nombreCompleto: {
+//     nombre: "Hedy",
+//     apellido: "Lamarr",
+//   },
+//   edad: 30,
+//   obtenerNombreCompleto: function () {
+//     return `${perfil.nombreCompleto.nombre} ${perfil.nombreCompleto.apellido}`
+//   },
+
+// };
+
+// console.log(perfil.obtenerNombreCompleto())
+
+//Ejercicio 6: Carrito
+// Tenemos un objeto carrito, que guarda datos de un carrito de compras en una tienda virtual, tiene dos propiedades: cuenta(un objeto con los datos de la persona que está haciendo la compra) y productos(un array de objetos, con todos los productos que está por comprar).Los productos tienen 4 propiedades: id(un número), titulo(un string con el nombre del producto), precio(un número con el precio del producto) y envioIncluido(un booleano que indica si el producto tiene o no cargos por envio).Por ejemplo:
+// Definí el método agregarAlCarrito que tome por parámetro un producto y lo agregue al array de productos del carrito, y el método obtenerTotal que retorne la suma de todos los precios de los productos que están en el carrito.
+
+//  let mouse = {
+//   id: 0,
+//   titulo: "Mouse Genius",
+//   precio: 150,
+//   envioIncluido: false
+// };
+
+// let carrito = {
+//   cuenta: {
+//     id: 123,
+//     nombre: "Ada Lovelace",
+//   },
+//   productos: [],
+//   agregarAlCarrito: function (producto) {
+//     this.productos.push(producto)
+//     return this
+//   },
+//   obtenerTotal: function () {
+//    // return carrito.productos[0].precio
+//     let final="";
+//     for (let i = 0; i < this.productos.length; i++) {
+//       final = parseInt(final + this.productos[i].precio)
+//     }
+//     return final
+//   },
+// }
+
+// console.log(carrito.agregarAlCarrito(mouse))
+
+// console.log(carrito.obtenerTotal())
+// //150
+
+
+
+
 //FUNCIONES CON OBJETOS
 
 //Ejercicio 1: Nombre completo
